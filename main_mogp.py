@@ -14,7 +14,7 @@ plt.rc('ytick',labelsize=30)
 font = {'family' : 'normal','weight' : 'normal','size'   : 32}
 plt.rc('font', **font)
 
-parser = argparse.ArgumentParser(description="Deep Probabilistic Inverse Microstructure Training beta-VAE")
+parser = argparse.ArgumentParser(description="process-structure property linkage")
 parser.add_argument("--train", default=True, type=bool, help="train (True) cuda")
 parser.add_argument("--load", default=False, type=bool, help="load trained model")
 parser.add_argument("--batch", default=1024, type=int, help="minibatch training size")
