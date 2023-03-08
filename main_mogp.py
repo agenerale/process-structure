@@ -20,7 +20,7 @@ parser.add_argument("--load", default=False, type=bool, help="load trained model
 parser.add_argument("--batch", default=1024, type=int, help="minibatch training size")
 parser.add_argument("--num_latent", default=20, type=int, help="# latent GPs")
 parser.add_argument("--num_inducing", default=100, type=int, help="# inducing points")
-parser.add_argument("--num_epochs", default=2000, type=int, help="# training epochs")
+parser.add_argument("--num_epochs", default=10000, type=int, help="# training epochs")
 parser.add_argument("--lr_init", default=1e-2, type=float, help="init. learning rate")
 parser.add_argument("--lr_end", default=0, type=float, help="end learning rate")
 parser.add_argument("--pc", default=0, type=int, help="model for PC # [0 - 9]")
@@ -28,7 +28,7 @@ parser.add_argument("--curve_points", default=20, type=float, help="# discretiza
 args = parser.parse_args()
 
 device = torch.device("cuda" if (torch.cuda.is_available() and args.train) else "cpu")
-device = torch.device("cuda")
+
 params_train = np.load('params_train.npy')
 params_test = np.load('params_test.npy')
 scores_train = np.load('scores_train.npy')
